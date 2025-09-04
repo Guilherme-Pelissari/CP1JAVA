@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gerenciamento de Importações</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <h1>Gerenciador de Importações</h1>
+
+    <form th:action="@{/importacoes/salvar}" th:object="${novaImportacao}" method="post">
+        <label>Produto:</label>
+        <input type="text" th:field="*{produto}" required/>
+        <label>País de Origem:</label>
+        <input type="text" th:field="*{paisOrigem}" required/>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Lista de Importações</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>País</th>
+                <th>Data</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="imp : ${importacoes}">
+                <td th:text="${imp.id}"></td>
+                <td th:text="${imp.produto}"></td>
+                <td th:text="${imp.paisOrigem}"></td>
+                <td th:text="${imp.dataImportacao}"></td>
+                <td th:text="${imp.status}"></td>
+                <td>
+                    <a th:href="@{'/importacoes/atualizar/' + ${imp.id} + '/EM_ANDAMENTO'}">Iniciar</a> |
+                    <a th:href="@{'/importacoes/atualizar/' + ${imp.id} + '/CONCLUIDA'}">Concluir</a> |
+                    <a th:href="@{'/importacoes/atualizar/' + ${imp.id} + '/CANCELADA'}">Cancelar</a> |
+                    <a th:href="@{'/importacoes/excluir/' + ${imp.id}}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
