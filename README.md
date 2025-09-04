@@ -40,7 +40,12 @@ CP1JAVA é um sistema simples e eficiente desenvolvido em **Java** para gerencia
    mvn clean install
    mvn spring-boot:run
    ```
-4. Acesse a aplicação em `http://localhost:8080/importacoes`.
+### Acessar no Navegador
+- **Aplicação**: [http://localhost:8080/importacoes](http://localhost:8080/importacoes)
+- **Console H2**: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+  - **JDBC URL**: `jdbc:h2:mem:importacoesdb`
+  - **User**: `sa`
+  - **Password**: (vazio)
 
 ## 📁 Estrutura do Projeto
 ```
