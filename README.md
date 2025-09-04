@@ -56,8 +56,7 @@ CP1JAVA/
 │   │   ├── resources/          # Arquivos de configuração e templates Thymeleaf
 │   └── test/                   # Testes do projeto
 ├── pom.xml                     # Configuração do Maven
-├── README.md                   # Este arquivo
-└── [Outros arquivos, se aplicável]
+├── README.md                   
 ```
 
 
